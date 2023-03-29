@@ -414,7 +414,7 @@ $Vozalis and Margaritis(2004)$
 
 
 <details>
-<summary> 3주차  </summary>
+<summary> 3주차(GNN기반 추천 시스템 조사)  </summary>
 <div markdown="1">   
 
 # 3주차(GNN기반 추천 시스템 조사)
@@ -970,7 +970,7 @@ GNN을 추천시스템에 사용하는 것은 인기를 끌고 있다. 그 이�
 
 
 <details>
-<summary> 4주차  </summary>
+<summary> 4주차(GNN을 이용하여 추천 시스템 구현 LightGCN)  </summary>
 <div markdown="1">   
 
 
