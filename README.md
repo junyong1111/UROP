@@ -17,7 +17,12 @@
 </div>
 </details>
 
+<details>
+<summary> 2주차 (추천시스템 분석) </summary>
+<div markdown="1">   
 
+</div>
+</details>
 
 <!-- 
 <details>
