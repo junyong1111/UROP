@@ -980,7 +980,7 @@ GNN을 추천시스템에 사용하는 것은 인기를 끌고 있다. 그 이�
 
 
 <details>
-<summary> 5주차  </summary>
+<summary> 5주차  (GNN을 이용한 추천 시스템 구현 </summary>
 <div markdown="1">   
 
 </div>
