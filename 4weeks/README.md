@@ -364,6 +364,53 @@ for epoch in range(epochs):
 <summary> LightGCN   </summary>
 <div markdown="1">   
 
+
+**LightGCN**은 **Collaborative Filtering** (CF)에서의 **User-Item Interaction Matrix(**사용자-아이템 상호작용 매트릭스)를 활용한 **추천 시스템에서 사용되는 모델 중 하나이다.**
+
+LightGCN은 그래프 신경망 모델 중 **가장 간단하면서도 성능이 우수한 모델 중 하나이다.** 모델 구조는 사용자와 아이템 간의 상호작용을 표현하는 **유저-아이템 행렬을 이용하여 그래프를 만든다**. 이때 그래프의 **각 노드는 유저와 아이템**을 나타내며, **각 엣지는 유저와 아이템 간의 상호작용**을 나타냅니다.
+
+LightGCN은 다른 CF(협업 필터링) 모델과 달리, User와 Item간의 **interaction(상호작용)** 매트릭스를 이용하여 User와 Item을 **Embedding**시키는 작업만을 수행한다. 즉, User-Item 간의 **side-information이나 Auxiliary feature를 사용하지 않는다.**
+
+LightGCN에서 사용되는 GCN은 **message passing**과정에서 User와 Item 간의 **interaction이 Embedding 공간에서 얼마나 가까운지**를 계산하는데에만 사용된다 이를 위해 User와 Item 간의 interaction matrix를 정규화하고, GCN의 weight를 1로 고정하는 등의 가벼운 방식을 적용하여 모델의 학습 속도를 높인다.
+
+**LightGCN의 장점**
+
+- 사용할 Auxiliary feature가 없어 매우 가볍고 단순하며 빠른 속도를 보여줌.
+- SOTA(CF모델)보다 높은 성능을 보여줌
+
+**LightGCN의 단점**
+
+- cold-start problem을 해결하지 못함
+- 과적합될 가능성 존재
+- 데이터가 매우 sparse한 경우 학습 성능이 떨어짐
+
+### 코드 구현
+
+- LightGCN 논문 요약
+    
+    넷플릭스, 트위터, 스포티파이 같은 디지털 서비스 뒤에는 사용자의 관심사를 예측하고 구매, 시청, 읽기에 영향을 주는 추천 시스템이 있다. 이 글에서는 PyTorch와 PyG로 구현된 그래프 기반 협업 필터링 추천 시스템 모델인 LightGCN에 대해 살펴본다.
+    
+    [LightGCN with PyTorch Geometric](https://medium.com/stanford-cs224w/lightgcn-with-pytorch-geometric-91bab836471e)
+    
+
+**목표 : 사용자가 아직 평점을 매기지 않은 영화를 추천**
+
+- 노드 : 사용자, 영화
+- 엣지 : 사용자와 영화 간의 상호작용(평점
+
+**데이터 전처리** 
+
+- 사용자가 좋아할 만한 영화만 추천하고 싶기 때문에, 0.5 ~ 5점 척도였던 평점(엣지)를 4점 이상으로만 포함하는 방식으로 데이터를 전처리
+
+**훈련 목표(Task)**
+
+- 두 노드 사이에 유효한 **엣지가 존재**하는지 여부를 예측하는 엣지 예측 작업
+- 이를 위해 그래프 구조에서 사용자와 영화 노드 간의 구분이 없는 동질 그래프로 설정
+- 그래프가 사용자와 영화 사이에만 에지가 존재하는 이분형 그래프
+- 사용자와 영화를 동일한 유형의 노드로 취급할 수 있음.
+- 동종 그래프 표현의 인접 행렬은 희소 행렬
+    - 희소 행렬 : 인접 행렬의 요소 대부분이 0
+
 </div>
 </details>
 
