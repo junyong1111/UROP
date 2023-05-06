@@ -1792,6 +1792,13 @@ Few Shot task를 파라미터 최적화 문제로 생각한다.
 </div>
 </details>
 
+<details>
+<summary> 7주차 </summary>
+<div markdown="1">   
+
+</div>
+</details> 
+
 <!-- 
 <details>
 <summary>  </summary>
