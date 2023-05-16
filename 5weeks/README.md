@@ -1,4 +1,4 @@
-# 5주차 (GNN을 이용하여 추천 시스템 구현 NGCF)# 5주차 (GNN을 이용하여 추천 시스템 구현 NGCF)
+# 5주차 (GNN을 이용하여 추천 시스템 구현 NGCF)
 
 <details>
 <summary> 5주차 GNN(NGCF) </summary>
