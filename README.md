@@ -2188,7 +2188,7 @@ ProtoCF는 아직 평점이 매겨지지 않은 아이템에 대해 예측을 �
 </details> 
 
 <details>
-<summary> 9주차 </summary>
+<summary> 9주차 (Meta-Learning-Metric-ProtoCF)  </summary>
 <div markdown="1">  
 
 # 9주차 (Meta-Learning-Metric-ProtoCF) 
