@@ -30,4 +30,32 @@ LISTWISE_METRICS = {"precision", "recall", "map", "ndcg", "coverage"}
 RANKING_METRICS = POINTWISE_METRICS | LISTWISE_METRICS
 ```
 
-1. 현재 들어온 metrics가 ranking_metrics에 포함되어 있는지 확인
+- **precision_at_k 함수**
+    
+    ```python
+    def precision_at_k(y_true, y_reco, k):
+        common_items = set(y_reco).intersection(y_true)
+        #-- 추천된 아이템 중 실제로 사용자가 선호하는(구매하거나 클릭한) 아이템의 갯수 / k
+        return len(common_items) / k
+    ```
+    
+    **TF/(TF + FT)  → 전체 아이템 중 실제 아이템 비율을 다시 K로 나눔**
+    
+
+**#-- 실제값들과 예측값, 샘플링된 유저들, k를 인자로 listwise_scores 계산**
+
+- **listwise_scores(fn, y_trues, y_recos, users, k) 함수**
+    
+    ```python
+    scores = list()
+    for u in users:
+    	y_true = y_true_lists[u]
+    	y_reco = y_reco_lists[u]
+    	scores.append(fn(y_true, y_reco, k))
+    return np.mean(scores)
+    ```
+    
+    precision_at_k를 통해 얻은 값들을 scores 리스트에 모두 저장 후 평균값 계산
+
+### LightGCN 프레임워크 만들기
+- [Colab에서 구현](https://colab.research.google.com/drive/17B2jHE-yasJaz_hkzl_6eeUi_zH8xd_c?usp=sharing")
