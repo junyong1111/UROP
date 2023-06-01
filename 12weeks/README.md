@@ -1,4 +1,4 @@
-# 12주차 12주차 (NGCF metrics 분석, Recommender FrameWork)
+# 12주차 (NGCF metrics 분석, Recommender FrameWork)
 
 ### 라이브러리에서 사용하는 NGCF  Metrics 분석
 
