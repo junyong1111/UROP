@@ -3290,7 +3290,7 @@ User 2211에게 아이템 5를 추천한 결과
 
 
 <details>
-<summary> 12주차 </summary>
+<summary> 12주차 (NGCF metrics 분석, Recommender FrameWork) </summary>
 <div markdown="1">   
 
 # 12주차 (NGCF metrics 분석, Recommender FrameWork)
@@ -3360,7 +3360,7 @@ RANKING_METRICS = POINTWISE_METRICS | LISTWISE_METRICS
 </details>
 
 <details>
-<summary> 13주차 </summary>
+<summary> 13주차 (LightGCN 분석, 순차적 추천 LSTM) </summary>
 <div markdown="1"> 
 
 # 13주차 (LightGCN 분석, 순차적 추천 LSTM)
